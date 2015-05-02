@@ -15,7 +15,7 @@ docker run --rm --name dns -p 53:53 -p 53:53/udp nightling/unbound
 You can override the local configuration directory with:
 
 ```
--v /path/to/unbound:/etc/unbound/conf.d
+-v /path/to/unbound:/etc/unbound/conf.d:ro
 ```
 
 But first, you have to run unbound-control-setup:
