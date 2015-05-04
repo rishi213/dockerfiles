@@ -4,8 +4,9 @@ MAINTAINER Nightling
 RUN yum install -y git python-pip \
 	&& yum clean all
 
-RUN git clone https://github.com/epinna/weevely3.git /opt/weevely3 \
-	&& pip install -r /opt/weevely3/requirements.txt \
+COPY source /opt/weevely3
+
+RUN pip install -r /opt/weevely3/requirements.txt \
 	&& useradd -M weevely
 
 USER weevely
