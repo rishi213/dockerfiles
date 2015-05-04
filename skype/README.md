@@ -1,6 +1,7 @@
 ## docker-skype
 
-Place [skype.sh](skype.sh) in $PATH and use it to run Skype in a container.
+See [skype.sh](https://github.com/Nightling/dockerfiles/blob/master/skype/skype.sh) 
+for a complete example of running Skype in a container with audio.
 
 Host requirements: X11, Pulseaudio.
 
