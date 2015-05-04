@@ -1,0 +1,3 @@
+[submodule "tircd/source"]
+	path = tircd/source
+	url = https://github.com/DexterTheDragon/tircd.git
