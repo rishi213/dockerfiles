@@ -1,3 +1,6 @@
 [submodule "tircd/source"]
 	path = tircd/source
 	url = https://github.com/DexterTheDragon/tircd.git
+[submodule "miniircd/source"]
+	path = miniircd/source
+	url = https://github.com/jrosdahl/miniircd.git

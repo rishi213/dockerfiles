@@ -4,12 +4,11 @@ MAINTAINER Nightling
 RUN yum install -y git python-pip \
 	&& yum clean all
 
-RUN git clone https://github.com/jrosdahl/miniircd /opt/miniircd \
-	&& useradd -d /statedir miniircd
-
-USER miniircd
+COPY source /opt/miniircd
 
 EXPOSE 6667
+
+USER nobody
 
 ENTRYPOINT ["/opt/miniircd/miniircd"]
 
