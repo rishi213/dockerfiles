@@ -1,7 +1,7 @@
 FROM fedora
 MAINTAINER Nightling
 
-RUN yum install -y git python-pip \
+RUN yum install -y python-{devel,pip} \
 	&& yum clean all
 
 COPY source /opt/miniircd

@@ -5,7 +5,7 @@ RUN yum install -y unbound bind-utils \
 	&& yum clean all \
 	&& unbound-control-setup -d /etc/unbound/conf.d
 
-ADD unbound /etc/unbound
+ADD etc /etc
 
 EXPOSE 53/udp
 EXPOSE 53

@@ -1,11 +1,13 @@
 FROM fedora
 MAINTAINER Nightling
 
-RUN yum install -y znc-devel gcc-c++ redhat-rpm-config \
+RUN yum install -y gcc-c++ make redhat-rpm-config \
 	&& yum clean all
 
-COPY entrypoint.sh /
+RUN yum install -y znc-devel \
+	&& yum clean all
 
 USER znc
 
+COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]

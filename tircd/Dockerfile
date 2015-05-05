@@ -1,12 +1,8 @@
 FROM fedora
 MAINTAINER Nightling
 
-RUN yum install -y git perl-CPAN \
-	&& yum clean all
-
 RUN yum install -y perl-JSON-Any perl-LWP-Protocol-https perl-Net-OAuth \
-	perl-Net-Twitter-Lite perl-POE perl-POE-Filter-IRCD \
-	perl-Storable perl-Time-Local perl-URI-Find \
+	perl-Net-Twitter-Lite perl-POE-Filter-IRCD perl-URI-Find \
 	&& yum clean all
 
 ADD source /opt/tircd
