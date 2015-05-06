@@ -1,5 +1,4 @@
-FROM fedora
-MAINTAINER Nightling
+FROM nightling/base
 
 RUN yum install -y unbound bind-utils \
 	&& yum clean all \
