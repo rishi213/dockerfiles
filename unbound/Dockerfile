@@ -1,6 +1,6 @@
 FROM nightling/base
 
-RUN yum install -y unbound bind-utils \
+RUN yum -y install unbound bind-utils \
 	&& yum clean all \
 	&& unbound-control-setup -d /etc/unbound/conf.d
 

@@ -1,6 +1,6 @@
 FROM nightling/base-gui
 
-RUN yum install -y firefox \
+RUN yum -y install firefox \
 	&& yum clean all
 
 ENV PULSE_SERVER /run/user/pulse/native
