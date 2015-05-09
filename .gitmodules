@@ -7,3 +7,6 @@
 [submodule "weevely/source"]
 	path = weevely/source
 	url = https://github.com/epinna/weevely3.git
+[submodule "willie/source"]
+	path = willie/source
+	url = https://github.com/embolalia/willie.git

@@ -1,8 +1,16 @@
 FROM nightling/base
 
 RUN yum -y install znc-{devel,modpython,modperl} \
-	&& yum clean all
+	&& yum clean all \
+	&& usermod -md /data znc
 
+ADD modules /usr/share/znc/modules
+
+RUN cd /usr/share/znc/modules/cpp \
+	&& znc-buildmod *.cpp
+
+EXPOSE 6667
 USER znc
-COPY entrypoint.sh /
-ENTRYPOINT ["/entrypoint.sh"]
+VOLUME /data
+
+ENTRYPOINT ["znc", "--foreground", "--datadir=/data"]

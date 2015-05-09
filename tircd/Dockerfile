@@ -2,13 +2,15 @@ FROM nightling/base
 
 RUN yum -y install perl-JSON-Any perl-LWP-Protocol-https perl-Net-OAuth \
 	perl-Net-Twitter-Lite perl-POE-Filter-IRCD perl-URI-Find \
-	&& yum clean all
+	&& yum clean all \
+	&& useradd -rmd /data tircd
 
 ADD source /opt/tircd
 ADD tircd.cfg /opt/tircd/
 
 EXPOSE 6667
+USER tircd
+VOLUME /data
 
-USER nobody
 WORKDIR /opt/tircd
 CMD ["perl", "tircd.pl"]

@@ -1,10 +1,11 @@
 FROM nightling/base
 
 COPY source /opt/miniircd
-RUN mkdir --mode 0777 /statedir
+RUN useradd -rmd /data miniircd
 
 EXPOSE 6667
+USER miniircd
+VOLUME /data
 
-USER nobody
 ENTRYPOINT ["/opt/miniircd/miniircd"]
-CMD ["--statedir=/statedir"]
+CMD ["--statedir=/data"]
