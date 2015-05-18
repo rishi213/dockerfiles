@@ -1,4 +1,4 @@
-FROM nightling/base
+FROM nightling/buildpack
 
 RUN yum -y install znc-{devel,modpython,modperl} \
 	&& yum clean all \
