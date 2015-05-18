@@ -4,6 +4,3 @@
 [submodule "miniircd/source"]
 	path = miniircd/source
 	url = https://github.com/jrosdahl/miniircd.git
-[submodule "willie/source"]
-	path = willie/source
-	url = https://github.com/embolalia/willie.git
