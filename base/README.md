@@ -1,1 +1,3 @@
 This is a common base image for the images in this repository.
+
+Ideally this image should be squashed with Fedora to reduce the bloat from updates...
