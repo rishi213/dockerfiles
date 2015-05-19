@@ -13,6 +13,7 @@ RUN yum -y update \
 	rubygems \
 	sudo \
 	&& yum clean all \
+	&& groupadd -og $(id -g nobody) nogroup \
 	&& cp /etc/skel/.bash* /root/ \
 	&& rm -f /root/anaconda* \
 	&& passwd --lock root

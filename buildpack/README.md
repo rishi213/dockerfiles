@@ -1,1 +1,1 @@
-This image provides build essentials.
+This image provides build essentials and common development packages.
