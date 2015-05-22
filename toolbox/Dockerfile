@@ -1,17 +1,20 @@
 FROM nightling/buildpack
 
 RUN yum -y install \
+	american-fuzzy-lop \
 	bind-utils \
 	binwalk \
 	checksec \
 	diffstat \
 	dnsenum \
+	etcd \
 	foremost \
 	gdb \
 	goaccess \
 	hexedit \
 	iperf \
 	iputils \
+	irssi \
 	john \
 	ltrace \
 	nano \
@@ -22,6 +25,7 @@ RUN yum -y install \
 	screen \
 	snmpcheck \
 	socat \
+	speedtest-cli \
 	sslscan \
 	sslsplit \
 	strace \
@@ -30,6 +34,7 @@ RUN yum -y install \
 	tcpreplay \
 	telnet \
 	tor \
+	traceroute \
 	valgrind \
 	vim-enhanced \
 	w3m \

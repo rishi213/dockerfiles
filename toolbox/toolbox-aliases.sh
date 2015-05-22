@@ -13,5 +13,6 @@ alias toolbox-sysadmin='toolbox --cap-add SYS_ADMIN'
 alias toolbox-host='toolbox-sysadmin --net host --ipc host --pid host -v /:/mnt/host'
 
 toolbox-attach() {
-	toolbox-sysadmin --net "container:$1" --ipc "container:$1" ${@:2}
+	toolbox-sysadmin --net "container:${!#}" --ipc "container:${!#}" \
+	--volumes-from "${!#}" "${@:1:$#-1}"
 }
