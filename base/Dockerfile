@@ -12,6 +12,7 @@ RUN yum -y update \
 	redhat-lsb-core \
 	rubygems \
 	sudo \
+	yum-utils \
 	&& yum clean all \
 	&& groupadd -og $(id -g nobody) nogroup \
 	&& cp /etc/skel/.bash* /root/ \
