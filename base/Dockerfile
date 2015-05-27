@@ -1,5 +1,7 @@
 FROM fedora
 
+ENV LANG="en_US.UTF-8" LC_COLLATE="POSIX"
+
 RUN yum -y update \
 	&& yum -y install \
 	bzip2 \
