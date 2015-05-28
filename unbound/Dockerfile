@@ -1,7 +1,7 @@
 FROM nightling/base
 
-RUN yum -y install unbound bind-utils \
-	&& yum clean all \
+RUN dnf -y install unbound python3-unbound \
+	&& dnf clean all \
 	&& unbound-control-setup -d /etc/unbound/conf.d
 
 ADD etc /etc

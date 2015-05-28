@@ -1,9 +1,7 @@
 FROM nightling/base-gui
 
-RUN yum -y install firefox \
-	&& yum clean all
-
-ENV PULSE_SERVER /run/user/pulse/native
+RUN dnf -y install firefox \
+	&& dnf clean all
 
 COPY entrypoint.sh /
 ENTRYPOINT ["/entrypoint.sh"]

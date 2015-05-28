@@ -1,7 +1,7 @@
 FROM nightling/buildpack
 
-RUN yum -y install znc-{devel,modpython,modperl} \
-	&& yum clean all \
+RUN dnf -y install znc-{devel,modpython,modperl} \
+	&& dnf clean all \
 	&& usermod -md /data znc
 
 ADD modules /usr/share/znc/modules

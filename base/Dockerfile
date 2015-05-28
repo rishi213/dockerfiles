@@ -1,24 +1,36 @@
-FROM fedora
+FROM fedora:22
+MAINTAINER Nightling
 
-ENV LANG="en_US.UTF-8" LC_COLLATE="POSIX"
-
-RUN yum -y update \
-	&& yum -y install \
+RUN dnf -y upgrade && dnf -y install \
 	bzip2 \
+	cronie \
+	dnf-plugins-core \
+	file \
+	findutils \
 	git \
+	hostname \
 	iproute \
+	less \
+	make \
 	nmap-ncat \
 	openssl \
-	perl-CPAN \
+	passwd \
+	patch \
+	perl \
+	procps-ng \
+	psmisc \
 	python{3,}-pip \
-	redhat-lsb-core \
-	rubygems \
+	rsync \
+	ssmtp \
 	sudo \
-	yum-utils \
-	&& yum clean all \
+	tar \
+	which \
+	xz \
+	&& dnf clean all \
 	&& groupadd -og $(id -g nobody) nogroup \
-	&& cp /etc/skel/.bash* /root/ \
-	&& rm -f /root/anaconda* \
+	&& rsync -a --del /etc/skel/ /root/ \
 	&& passwd --lock root
+
+ENV LANG="en_US.UTF-8" LC_COLLATE="C"
 
 CMD ["bash"]

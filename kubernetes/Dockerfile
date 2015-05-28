@@ -1,4 +1,4 @@
 FROM nightling/base
 
-RUN yum -y install kubernetes \
-	&& yum clean all
+RUN dnf -y install kubernetes \
+	&& dnf clean all
