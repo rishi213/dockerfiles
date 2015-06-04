@@ -5,5 +5,5 @@ ADD google-chrome.repo /etc/yum.repos.d/
 RUN dnf -y install google-chrome-stable \
 	&& dnf clean all
 
-COPY entrypoint.sh /
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["entrypoint", "google-chrome"]
+CMD ["--incognito"]
