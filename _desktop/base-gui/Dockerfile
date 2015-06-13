@@ -3,16 +3,17 @@ FROM nightling/base
 # Basic desktop prerequisites
 RUN dnf -y install \
 	alsa-plugins-pulseaudio.* \
-	pulseaudio-libs.* \
+	mesa-dri-drivers.* \
+	pulseaudio-libs-glib2.* \
 	redhat-lsb.* \
 	{dejavu-{sans,serif},google-cros}*-fonts \
 	&& dnf clean all \
-	&& useradd -Umd /data user
+	&& useradd -md /data -UG audio,video user
 
 # Common shared libraries
 RUN dnf -y install \
 	adwaita*.* \
-	gtk3 \
+	gtk{2,3} \
 	libicu \
 	qtwebkit.* \
 	&& dnf clean all

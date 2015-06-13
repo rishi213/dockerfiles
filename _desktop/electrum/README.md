@@ -3,6 +3,7 @@
 See [electrum.sh](https://github.com/Nightling/dockerfiles/blob/master/_desktop/electrum/electrum.sh)
 for a complete example of running Electrum in a container.
 
-Host requirements: X11.
+This image is based on Fedora from
+[nightling/base-gui](https://github.com/Nightling/dockerfiles/blob/master/_desktop/base-gui).
 
-Tested on Fedora 21+.
+Host requirements: X11.

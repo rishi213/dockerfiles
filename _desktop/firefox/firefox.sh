@@ -5,6 +5,7 @@ docker rm "$CONTAINER_ID" 2> /dev/null
 
 docker run -d -h firefox --name "$CONTAINER_ID" \
 -v /tmp/.X11-unix:/tmp/.X11-unix:ro -e DISPLAY="unix${DISPLAY}" \
+$(find /dev/dri ! -type d | awk '{printf " --device %s ", $1}') \
 -v /etc/localtime:/etc/localtime:ro \
 -v /etc/machine-id:/etc/machine-id:ro \
 -v /run/user/${UID}/pulse:/run/user/pulse:ro \

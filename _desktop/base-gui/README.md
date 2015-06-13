@@ -20,4 +20,9 @@ Recommended docker run options:
 
  * `-v /etc/localtime:/etc/localtime:ro` to inherit the timezone
 
+ * `-v /etc/machine-id:/etc/machine-id:ro` to inherit the machine ID
+
  * `-e XUID=${UID} -e XGID=${GID}` to match user IDs
+
+To allow direct communication with the graphics card for high performance rendering
+(i.e. OpenGL) the host devices under `/dev/dri` should be added to the container.
