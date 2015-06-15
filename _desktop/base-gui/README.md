@@ -10,6 +10,8 @@ The included `entrypoint` script:
 
  3. Executes the given parameters as "user".
 
+Recent RPM Fusion installers are available in `/usr/src/rpmfusion`.
+
 ## Usage
 
 Recommended docker run options:
