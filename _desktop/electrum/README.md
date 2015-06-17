@@ -1,4 +1,4 @@
-## docker-firefox
+## docker-electrum
 
 See [electrum.sh](https://github.com/Nightling/dockerfiles/blob/master/_desktop/electrum/electrum.sh)
 for a complete example of running Electrum in a container.
