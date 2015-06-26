@@ -1,6 +1,6 @@
 ## base-gui
 
-A common base image for the **desktop** images in this repository.
+A common base image for **desktop** images based on **Fedora**.
 
 The included `entrypoint` script:
 
@@ -26,5 +26,16 @@ Recommended docker run options:
 
  * `-e XUID=${UID} -e XGID=${GID}` to match user IDs
 
-To allow direct communication with the graphics card for high performance rendering
-(i.e. OpenGL) the host devices under `/dev/dri` should be added to the container.
+ * `--device /dev/dri` to allow direct access to the graphics card(s)
+
+ * `--device /dev/snd` to allow direct access to audio devices
+
+## Host requirements
+
+ * Docker 1.7+
+
+ * X11/XWayland
+
+ * Pulseaudio
+
+Best compatible with Fedora based systems.
