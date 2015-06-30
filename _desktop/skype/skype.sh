@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 CONFIG="${HOME}/.Skype/shared.xml"
 CONTAINER_ID="skype-${UID}"
 OPTS="-e XUID=${UID} -e XGID=${GID}"
@@ -9,9 +9,10 @@ awk '{printf " -p %1$d:%1$d -p %1$d:%1$d/udp", $1}'`
 	OPTS="${OPTS} ${PORTS}"
 fi
 
-docker rm "$CONTAINER_ID" 2> /dev/null
+docker rm -v "$CONTAINER_ID" 2> /dev/null
 
-docker run -d -h skype --name "$CONTAINER_ID" \
+docker run -d -h skype --name="$CONTAINER_ID" \
+--cap-drop=ALL --cap-add={AUDIT_WRITE,CHOWN,SETGID,SETUID} \
 -v /tmp/.X11-unix:/tmp/.X11-unix:ro -e DISPLAY="unix${DISPLAY}" \
 -v /etc/localtime:/etc/localtime:ro \
 -v /etc/machine-id:/etc/machine-id:ro \
