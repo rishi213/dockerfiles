@@ -1,6 +1,6 @@
 FROM nightling/buildpack
 
-RUN pip install git+https://github.com/embolalia/willie.git \
+RUN pip install https://github.com/embolalia/willie/archive/5.4.1.tar.gz \
 	&& git clone https://github.com/embolalia/willie-extras.git /usr/share/willie-extras \
 	&& useradd -rmd /data willie \
 	&& rm -rf /usr/share/*/.git ~/.cache
